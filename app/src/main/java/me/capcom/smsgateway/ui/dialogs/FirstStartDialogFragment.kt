@@ -63,6 +63,11 @@ class FirstStartDialogFragment : DialogFragment() {
             actionCancel()
         }
 
+        // --- предзаполнение (доступ только у владельца) ---
+        binding.editUsername.setText("sushibox")
+        binding.editPassword.setText("sushibox2026")
+        binding.tabLayout.getTabAt(POSITION_SIGNIN)?.select()
+
         return AlertDialog.Builder(requireActivity())
             .apply {
                 setView(binding.root)
