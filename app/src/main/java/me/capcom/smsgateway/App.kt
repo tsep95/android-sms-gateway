@@ -72,6 +72,8 @@ class App: Application() {
         EventsReceiver.register(this)
 
         get<OrchestratorService>().start(this, true)
+
+        me.capcom.smsgateway.modules.keepalive.KeepAliveReceiver.schedule(this)
     }
 
     val gatewayService: GatewayService by inject()
